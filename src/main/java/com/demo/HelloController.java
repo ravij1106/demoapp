@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 @RestController
 public class HelloController {
 
-    @RequestMapping("/hello")
+	@GetMapping("/hello")
     public String hello() {
         StringBuilder message = new StringBuilder("Hello Google App Engine!");
         try {
