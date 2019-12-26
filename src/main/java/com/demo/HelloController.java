@@ -29,5 +29,12 @@ public class HelloController {
 		model.addAttribute("message", message);
 		return "newPage";
 	}
+    
+    @GetMapping("/newPage1")
+	public String getPage1(Model model) {
+		String message = "Hi welcome to Spring boot application";
+		model.addAttribute("message", message);
+		return "newPage";
+	}
 
 }
