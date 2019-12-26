@@ -23,11 +23,16 @@ public class HelloController {
         return message.toString();
     }
     
-    @RequestMapping("/newPage")
+    @GetMapping("/newPage")
 	public String getPage(Model model) {
-		String message = "Hi welcome to Spring boot application";
-		model.addAttribute("message", message);
-		return "newPage";
+    	StringBuilder message = new StringBuilder("Hello,welcome to spring boot application!");
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            message.append(" From host: " + ip);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        return message.toString();
 	}
     
     @RequestMapping("/newPage1")
